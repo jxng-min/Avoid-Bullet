@@ -8,51 +8,74 @@ public class GameManager : Singleton<GameManager>
 {
     public enum GameState
     {
-        SETTING = 0,
-        PLAYING = 1,
-        PAUSE = 2,
-        DEAD = 3
+        SETTING, PLAYING, PAUSE, DEAD
     }
 
-    public static GameState game_state;
-
+    public GameState State { get; private set; }
     public GameObject m_state_canvas;
     public GameObject m_dead_panel;
     public GameObject m_pause_panel;
 
-    void Start()
+    [SerializeField]
+    private JoyStickValue m_joy_value;
+
+    public List<Vector2> m_bullet_velocity_vec;
+
+    private void Start()
     {
         DontDestroyOnLoad(m_state_canvas);
-
-        TimerCtrl.play_time = 0.0f;
-        Time.timeScale = 1.0f;
-        game_state = GameState.SETTING;
+        Setting();
     }
 
-    void Update()
+    public void Setting()
     {
-        if(game_state == GameState.PLAYING)
+        State = GameState.SETTING;
+
+        m_pause_panel.SetActive(false);
+        m_dead_panel.SetActive(false);
+
+        TimerCtrl.m_play_time = 0f;
+    }
+
+    public void Playing()
+    {
+        State = GameState.PLAYING;
+
+        m_pause_panel.SetActive(false);
+        m_dead_panel.SetActive(false);
+    }
+
+    public void Pause()
+    {
+        State = GameState.PAUSE;
+
+        FindObjectOfType<PlayerCtrl>().PausePlayer();
+
+        GameObject[] bullets = GameObject.FindGameObjectsWithTag("OBJECT");
+        for(int i = 0; i < bullets.Length; i++)
         {
-            m_pause_panel.SetActive(false);
-            m_dead_panel.SetActive(false);
-            Time.timeScale = 1.0f;
+            m_bullet_velocity_vec.Add(bullets[i].GetComponent<Rigidbody2D>().velocity);
+            bullets[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
-        else if(game_state == GameState.PAUSE)
-        {
-            m_pause_panel.SetActive(true);
-            Time.timeScale = 0.0f;        
-        }
-        else if(game_state == GameState.DEAD)
-        {
-            m_dead_panel.SetActive(true);
-            Time.timeScale = 0.0f;
-        }
-        else
-        {
-            m_pause_panel.SetActive(false);
-            m_dead_panel.SetActive(false);
-            TimerCtrl.play_time = 0f;
-            Time.timeScale = 1.0f;
-        }
+
+        m_pause_panel.SetActive(true);
+    }
+
+    public void Dead()
+    {
+        State = GameState.DEAD;
+
+        GameObject joy_stick = GameObject.FindGameObjectWithTag("JOYSTICK");
+        Destroy(joy_stick);
+        m_joy_value.m_joy_touch = Vector2.zero;
+
+        FindObjectOfType<PlayerCtrl>().DeadPlayer();
+
+        GameObject[] bullets = GameObject.FindGameObjectsWithTag("OBJECT");
+        foreach(GameObject bullet in bullets)
+            bullet.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        m_bullet_velocity_vec.Clear();
+
+        m_dead_panel.SetActive(true);
     }
 }

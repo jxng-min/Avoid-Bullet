@@ -12,8 +12,6 @@ public class PlayerDeadState : MonoBehaviour, IPlayerState
         if(!m_player_ctrl)
             m_player_ctrl = ctrl;
         
-        m_player_ctrl.GetComponent<SECallCtrl>().Click();
         m_player_ctrl.m_rigidbody.velocity = Vector2.zero;
-        GameManager.game_state = GameManager.GameState.DEAD;
     }
 }

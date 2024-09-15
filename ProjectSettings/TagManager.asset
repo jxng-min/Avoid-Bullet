@@ -11,6 +11,7 @@ TagManager:
   - SPAWNER_9
   - SPAWNER_6
   - OBJECT
+  - JOYSTICK
   layers:
   - Default
   - TransparentFX

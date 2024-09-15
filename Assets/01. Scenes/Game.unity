@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 248538006}
   - component: {fileID: 248538005}
   - component: {fileID: 248538004}
-  - component: {fileID: 248538009}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -290,19 +289,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &248538009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 248538003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49517c1e25ce66d42b5629254be9ddba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_name: Dead
 --- !u!1 &356845994
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +370,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_score: {fileID: 2080755016}
-  m_text: 
 --- !u!1 &425008193
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,7 +625,6 @@ GameObject:
   - component: {fileID: 576753029}
   - component: {fileID: 576753028}
   - component: {fileID: 576753031}
-  - component: {fileID: 576753032}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -711,18 +695,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 576753032}
-        m_TargetAssemblyTypeName: SECallCtrl, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 576753031}
         m_TargetAssemblyTypeName: PauseCtrl, Assembly-CSharp
         m_MethodName: Pause
@@ -785,19 +757,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f086bb99f329b439fac7aaf5f3a139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &576753032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576753026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49517c1e25ce66d42b5629254be9ddba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_name: Button
 --- !u!1 &653244889
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,7 +842,6 @@ GameObject:
   m_Component:
   - component: {fileID: 761647125}
   - component: {fileID: 761647126}
-  - component: {fileID: 761647127}
   - component: {fileID: 761647128}
   m_Layer: 9
   m_Name: Spawner_3
@@ -952,20 +910,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 1}
   m_EdgeRadius: 0
---- !u!114 &761647127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 761647124}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bdb2edc9acf1b74d8c51d239d9e4159, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_player: {fileID: 0}
-  m_arrow: {fileID: 4844599662555317492, guid: 84486c866ee549c409a6e8c2ae63ed32, type: 3}
 --- !u!114 &761647128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1067,7 +1011,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1140571797}
   - component: {fileID: 1140571798}
-  - component: {fileID: 1140571799}
   - component: {fileID: 1140571800}
   m_Layer: 9
   m_Name: Spawner_2
@@ -1136,20 +1079,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1140571799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1140571796}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bdb2edc9acf1b74d8c51d239d9e4159, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_player: {fileID: 0}
-  m_arrow: {fileID: 4844599662555317492, guid: 84486c866ee549c409a6e8c2ae63ed32, type: 3}
 --- !u!114 &1140571800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1360,7 +1289,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1285952063}
   - component: {fileID: 1285952064}
-  - component: {fileID: 1285952065}
   - component: {fileID: 1285952066}
   m_Layer: 9
   m_Name: Spawner_1
@@ -1429,20 +1357,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1285952065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285952062}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bdb2edc9acf1b74d8c51d239d9e4159, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_player: {fileID: 0}
-  m_arrow: {fileID: 4844599662555317492, guid: 84486c866ee549c409a6e8c2ae63ed32, type: 3}
 --- !u!114 &1285952066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1473,7 +1387,7 @@ GameObject:
   - component: {fileID: 1378340453}
   m_Layer: 5
   m_Name: JoyStick
-  m_TagString: Untagged
+  m_TagString: JOYSTICK
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1635,7 +1549,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1782748841}
   - component: {fileID: 1782748842}
-  - component: {fileID: 1782748843}
   - component: {fileID: 1782748844}
   m_Layer: 9
   m_Name: Spawner_4
@@ -1704,20 +1617,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1782748843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1782748840}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bdb2edc9acf1b74d8c51d239d9e4159, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_player: {fileID: 0}
-  m_arrow: {fileID: 4844599662555317492, guid: 84486c866ee549c409a6e8c2ae63ed32, type: 3}
 --- !u!114 &1782748844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1896,8 +1795,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 38a726ba816e1f9458ee39fea93c9e9f, type: 2}
-  m_sharedMaterial: {fileID: 5948047838014836020, guid: 38a726ba816e1f9458ee39fea93c9e9f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1c03bc59cc856b14ab6da9581044b6f6, type: 2}
+  m_sharedMaterial: {fileID: -2058264576972756972, guid: 1c03bc59cc856b14ab6da9581044b6f6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1921,8 +1820,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

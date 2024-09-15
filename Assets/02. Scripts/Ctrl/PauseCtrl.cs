@@ -1,0 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
+using _EventBus;
+using UnityEngine;
+
+public class PauseCtrl : MonoBehaviour
+{
+    public void Pause()
+    {
+        SoundManager.Instance.ButtonClick();
+
+        if(GameManager.Instance.State == GameManager.GameState.PLAYING)
+            GameEventBus.Publish(GameEventType.PAUSE);
+        else if(GameManager.Instance.State == GameManager.GameState.PAUSE)
+        {
+            GameEventBus.Publish(GameEventType.PLAYING);
+
+            GameObject[] bullets = GameObject.FindGameObjectsWithTag("OBJECT");
+            for(int i = 0; i < GameManager.Instance.m_bullet_velocity_vec.Count; i++)
+                bullets[i].GetComponent<Rigidbody2D>().velocity = GameManager.Instance.m_bullet_velocity_vec[i];
+            GameManager.Instance.m_bullet_velocity_vec.Clear();
+        }
+    }
+}
