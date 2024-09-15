@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ScoreCtrl : MonoBehaviour
 {
-    [SerializeField] private TMP_Text m_tmp;
+    public TMP_Text m_tmp;
     [SerializeField] private string m_txt;
 
     private void OnEnable()
