@@ -25,7 +25,7 @@ public class PauseCtrl : MonoBehaviour
             GameEventBus.Publish(GameEventType.PLAYING);
 
             GameObject[] bullets = GameObject.FindGameObjectsWithTag("OBJECT");
-            for(int i = 0; i < GameManager.Instance.m_bullet_velocity_vec.Count; i++)
+            for(int i = 0; i < bullets.Length; i++)
                 bullets[i].GetComponent<Rigidbody2D>().velocity = GameManager.Instance.m_bullet_velocity_vec[i];
             GameManager.Instance.m_bullet_velocity_vec.Clear();
         }

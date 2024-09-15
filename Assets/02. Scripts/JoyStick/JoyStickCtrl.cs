@@ -19,8 +19,6 @@ public class JoyStickCtrl : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("Anchored Position: " + m_rect.anchoredPosition);
-
         Vector2 localPoint;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(m_rect, eventData.position, eventData.pressEventCamera, out localPoint);
         m_touch = localPoint / m_width_half;

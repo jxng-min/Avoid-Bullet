@@ -9,7 +9,7 @@ public class ArrowCtrl : MonoBehaviour
 
     private Rigidbody2D m_rigidbody;
     private float m_move_speed = 2f;
-    private float m_time_to_self_destruct = 3.0f;
+    private float m_time_to_self_destruct = 3f;
 
     private void OnEnable()
     {
