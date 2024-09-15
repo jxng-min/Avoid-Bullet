@@ -51,13 +51,6 @@ public class GameManager : Singleton<GameManager>
 
         FindObjectOfType<PlayerCtrl>().PausePlayer();
 
-        GameObject[] bullets = GameObject.FindGameObjectsWithTag("OBJECT");
-        for(int i = 0; i < bullets.Length; i++)
-        {
-            m_bullet_velocity_vec.Add(bullets[i].GetComponent<Rigidbody2D>().velocity);
-            bullets[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        }
-
         m_pause_panel.SetActive(true);
     }
 

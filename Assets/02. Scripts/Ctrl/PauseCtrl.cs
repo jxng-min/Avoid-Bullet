@@ -10,7 +10,16 @@ public class PauseCtrl : MonoBehaviour
         SoundManager.Instance.ButtonClick();
 
         if(GameManager.Instance.State == GameManager.GameState.PLAYING)
+        {
             GameEventBus.Publish(GameEventType.PAUSE);
+
+            GameObject[] bullets = GameObject.FindGameObjectsWithTag("OBJECT");
+            for(int i = 0; i < bullets.Length; i++)
+            {
+                GameManager.Instance.m_bullet_velocity_vec.Add(bullets[i].GetComponent<Rigidbody2D>().velocity);
+                bullets[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            }
+        }
         else if(GameManager.Instance.State == GameManager.GameState.PAUSE)
         {
             GameEventBus.Publish(GameEventType.PLAYING);
