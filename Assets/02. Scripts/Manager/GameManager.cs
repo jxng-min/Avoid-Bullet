@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using _Singleton;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -70,5 +71,8 @@ public class GameManager : Singleton<GameManager>
         m_bullet_velocity_vec.Clear();
 
         m_dead_panel.SetActive(true);
+
+        WebSocketClient.Instance.m_data.score = Convert.ToInt32(TimerCtrl.m_play_time * 10);
+        WebSocketClient.Instance.Send();
     }
 }
