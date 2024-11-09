@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 251748826}
   - component: {fileID: 251748825}
   m_Layer: 0
-  m_Name: WebSocketClient
+  m_Name: WebClient
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1477,7 +1477,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u24D2Copyright. jxng-min, Published by SUCAT"
+  m_text: Published by SUCAT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1c03bc59cc856b14ab6da9581044b6f6, type: 2}
   m_sharedMaterial: {fileID: -2058264576972756972, guid: 1c03bc59cc856b14ab6da9581044b6f6, type: 2}
@@ -2148,7 +2148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1437049409
 MonoBehaviour:
   m_ObjectHideFlags: 0

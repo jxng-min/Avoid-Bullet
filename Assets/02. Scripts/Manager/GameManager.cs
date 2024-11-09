@@ -72,7 +72,6 @@ public class GameManager : Singleton<GameManager>
 
         m_dead_panel.SetActive(true);
 
-        WebSocketClient.Instance.m_data.score = Convert.ToInt32(TimerCtrl.m_play_time * 10);
-        WebSocketClient.Instance.Send();
+        WebClient11.Instance.Send(Convert.ToInt32(TimerCtrl.m_play_time * 10));
     }
 }
