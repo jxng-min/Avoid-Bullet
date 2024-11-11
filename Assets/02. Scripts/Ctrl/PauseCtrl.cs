@@ -16,8 +16,8 @@ public class PauseCtrl : MonoBehaviour
             GameObject[] bullets = GameObject.FindGameObjectsWithTag("OBJECT");
             for(int i = 0; i < bullets.Length; i++)
             {
-                GameManager.Instance.m_bullet_velocity_vec.Add(bullets[i].GetComponent<Rigidbody2D>().velocity);
-                bullets[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                GameManager.Instance.m_bullet_velocity_vec.Add(bullets[i].GetComponent<Rigidbody2D>().linearVelocity);
+                bullets[i].GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
             }
         }
         else if(GameManager.Instance.State == GameManager.GameState.PAUSE)
@@ -26,7 +26,7 @@ public class PauseCtrl : MonoBehaviour
 
             GameObject[] bullets = GameObject.FindGameObjectsWithTag("OBJECT");
             for(int i = 0; i < bullets.Length; i++)
-                bullets[i].GetComponent<Rigidbody2D>().velocity = GameManager.Instance.m_bullet_velocity_vec[i];
+                bullets[i].GetComponent<Rigidbody2D>().linearVelocity = GameManager.Instance.m_bullet_velocity_vec[i];
             GameManager.Instance.m_bullet_velocity_vec.Clear();
         }
     }

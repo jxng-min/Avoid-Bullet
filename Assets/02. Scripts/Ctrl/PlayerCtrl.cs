@@ -54,9 +54,9 @@ public class PlayerCtrl : MonoBehaviour
     private void FixedUpdate()
     {
         if(m_move_vec_mag <= 2.2f)
-            m_rigidbody.velocity = m_value.m_joy_touch * m_move_speed * Time.deltaTime;
+            m_rigidbody.linearVelocity = m_value.m_joy_touch * m_move_speed * Time.deltaTime;
         else
-            m_rigidbody.velocity = Vector2.zero;
+            m_rigidbody.linearVelocity = Vector2.zero;
     }
 
     public void StopPlayer()

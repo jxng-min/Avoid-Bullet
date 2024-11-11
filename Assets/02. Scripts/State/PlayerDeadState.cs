@@ -12,6 +12,6 @@ public class PlayerDeadState : MonoBehaviour, IPlayerState
         if(!m_player_ctrl)
             m_player_ctrl = ctrl;
         
-        m_player_ctrl.m_rigidbody.velocity = Vector2.zero;
+        m_player_ctrl.m_rigidbody.linearVelocity = Vector2.zero;
     }
 }

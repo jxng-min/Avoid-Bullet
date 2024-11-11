@@ -67,7 +67,7 @@ public class GameManager : Singleton<GameManager>
 
         GameObject[] bullets = GameObject.FindGameObjectsWithTag("OBJECT");
         foreach(GameObject bullet in bullets)
-            bullet.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            bullet.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
         m_bullet_velocity_vec.Clear();
 
         m_dead_panel.SetActive(true);

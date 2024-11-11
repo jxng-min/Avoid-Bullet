@@ -35,7 +35,7 @@ public class ArrowCtrl : MonoBehaviour
 
     private void ResetArrow()
     {
-        m_rigidbody.velocity = Vector2.zero;
+        m_rigidbody.linearVelocity = Vector2.zero;
     }
 
     public void SetDirection(Vector3 direction)
