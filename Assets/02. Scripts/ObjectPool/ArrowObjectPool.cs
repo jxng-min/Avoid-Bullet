@@ -64,7 +64,7 @@ public class ArrowObjectPool : MonoBehaviour
         if(GameManager.Instance.State == GameManager.GameState.PLAYING)
         {
             float deg = 0;
-            var amount = Random.Range(1, 10);
+            var amount = Random.Range(1, 7);
 
             for(int i = 0; i < amount; i++)
             {
